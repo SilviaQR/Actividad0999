@@ -16,6 +16,7 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private Square suelo;
+    private Person persona;
 
     /**
      * Constructor for objects of class Picture
@@ -62,6 +63,10 @@ public class Picture
         suelo.moveVertical(125);
         suelo.changeSize(1000);
         suelo.makeVisible();
+        
+        persona = new Person();
+        persona.moveVertical(15);
+        persona.moveHorizontal(-250);
     }
 
     /**
@@ -91,19 +96,27 @@ public class Picture
             sun.changeColor("yellow");
         }
     }
-	
-	/**
-	 * Mover el sol hacia abajo
-	 */
-	public void moveSun()
-	{
-		sun.slowMoveVertical(100);
-		suelo.changeColor("black");
-		sun.changeColor("black");
-		wall.changeColor("black");
-		roof.changeColor("black");
-		window.changeColor("white");
-	}
+    
+    /**
+     * Mover el sol hacia abajo
+     */
+    public void moveSun()
+    {
+        sun.slowMoveVertical(100);
+        suelo.changeColor("black");
+        sun.changeColor("black");
+        wall.changeColor("black");
+        roof.changeColor("black");
+        window.changeColor("white");
+    }
+    /**
+     * Mover persona hacia la derecha
+     */
+    public void movePerson()
+    {
+        persona.makeVisible();
+        persona.slowMoveHorizontal(100);
+    }
 }
 
   
